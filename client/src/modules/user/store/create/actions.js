@@ -7,7 +7,8 @@ export const create = ({ commit }, values) => {
     commit(types.USER_CREATE_SET_ERROR, '')
     commit(types.USER_CREATE_TOGGLE_LOADING)
 
-    return ApiService.post('/api/user', values)
+    const url =ApiService.generateUrl('user');
+    return ApiService.post(url, values)
         .then((data) => {
             commit(types.USER_CREATE_TOGGLE_LOADING)
             commit(types.USER_CREATE_SET_CREATED, data)
