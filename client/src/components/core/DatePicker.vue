@@ -16,7 +16,7 @@
             <template v-slot:activator="{ on }">
                 <v-text-field
                     v-model="dateFormatted"
-                    label="Date"
+                    :label="label"
                     hint="DD/MM/YYYY format"
                     persistent-hint
                     prepend-icon="mdi-calendar"
